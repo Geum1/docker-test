@@ -13,4 +13,5 @@ COPY ./ ./
 CMD [ "npm", "run", "build" ]
 
 FROM nginx
-COPY --from=builder /usr/src/app/build  /user/shar/nginx/html
+
+COPY --from=builder /usr/src/app/build /user/shar/nginx/html
