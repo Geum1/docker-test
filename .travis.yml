@@ -5,7 +5,7 @@ language: generic
 services:
  - docker
 
- before_install:
+before_install:
   - echo "start Creatring an image with dockerfile"
   - docker build -t geum0527/docker-test -f dockerfile.dev ./
 
