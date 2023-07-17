@@ -7,10 +7,10 @@ services:
 
 before_install:
   - echo "start creating an image with dockerfile"
-  - docker build -t geum0527/react-app -f Dockerfile.dev .
+  - docker build -t geum0527/react-app -f dockerfile.dev .
 
 script: 
   - docker run -e CI=true geum0527/react-app npm run test -- --coverage
 
 after-success:
- - echo "Test Success"
+  - echo "Test Success"
