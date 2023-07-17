@@ -1,0 +1,16 @@
+sudo: required
+
+language: generic
+
+services:
+ - docker
+
+ before_install:
+  - echo "start Creatring an image with dockerfile"
+  - docker build -t geum0527/docker-test -f dockerfile.dev ./
+
+scropt:
+ - docker run -e CI=true geum0527/docker-test npm run test -- --coverage
+
+after-success:
+ - echo "Test Success"
