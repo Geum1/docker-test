@@ -23,4 +23,4 @@ deploy:
   on:
     branch: master
     access_key_id: $test
-    secret_access_key: $scret_test
+    secret_access_key: $test_2
