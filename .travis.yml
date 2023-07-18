@@ -13,8 +13,9 @@ script:
   - docker run -e CI=true geum0527/react-app npm run test -- --coverage
 
 deploy:
+  edge: true
   provider: elasticbeanstalk
-  region: "ap-northeast-2"
+  region: "ap-southeast-2"
   app: "docker-app"
   env: "Docker-app-env"
   bucket_name: "elasticbeanstalk-ap-southeast-2-350181720244"
@@ -22,3 +23,4 @@ deploy:
   on:
     branch: master
     access_key_id: $test
+    secret_access_key: $scret_test
