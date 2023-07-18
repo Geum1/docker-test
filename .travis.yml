@@ -21,29 +21,5 @@ deploy:
   bucket_path: "docker-app"
   on:
     branch: master
-    access_key_id: $AWS_KEY
-    secret_access_key: $AWS_SECRET_KEYsudo: required
-
-language: generic
-
-services:
-  - docker
-
-before_install:
-  - echo "start creating an image with dockerfile"
-  - docker build -t geum0527/react-app -f dockerfile.dev .
-
-script: 
-  - docker run -e CI=true geum0527/react-app npm run test -- --coverage
-
-deploy:
-  provider: elasticbeanstalk
-  region: "ap-northeast-2"
-  app: "docker-app"
-  env: "Docker-app-env"
-  bucket_name: "elasticbeanstalk-ap-southeast-2-350181720244"
-  bucket_path: "docker-app"
-  on:
-    branch: master
     access_key_id: $Key
     secret_access_key: $secret_key
