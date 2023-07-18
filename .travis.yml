@@ -21,5 +21,4 @@ deploy:
   bucket_path: "docker-app"
   on:
     branch: master
-    access_key_id: $Key
-    secret_access_key: $secret_key
+    access_key_id: $test
